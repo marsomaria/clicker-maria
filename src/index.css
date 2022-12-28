@@ -1,3 +1,6 @@
+*{
+  background-color: black;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +13,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.homebox{
+  background-color: green;
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 700px;
+  width: 30%;
+  height: 60%;
+  text-align: center;
+  margin: 100px auto;
+  border-radius: 25px;
+  border: 1px solid black;
+  padding:5%;
+  color:white;
 }
