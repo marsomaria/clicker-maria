@@ -11,8 +11,6 @@ function Pages() {
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />}/>
             <Route path="/game" element={<Game />}/>
-            
-
         </Routes>
     </AnimatePresence>
         

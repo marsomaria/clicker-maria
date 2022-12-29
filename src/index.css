@@ -86,6 +86,23 @@ main{
   width: 100%;
 
 }
+
+.homebox{
+  /* background-color: green; */
+  background-color:white;
+  max-width: 500px;
+  min-width: 300px;
+  max-height: 700px;
+  width: 30%;
+  height: 60%;
+  text-align: center;
+  margin: 70px auto;
+  border-radius: 25px;
+  padding:5%;
+  color:black;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
 .game-header{
   background-color: #666;
   flex-direction: row;
@@ -116,6 +133,7 @@ main{
   }
 
   .latestRanking{
+    margin-top: 0px;
     position: relative;
     text-align: center;
   }
@@ -123,4 +141,28 @@ main{
     /* padding: 1px; */
     text-align:center;
   }
+
+  .btnClick{
+    color: #1cc49d;
+    background-color: #1b2f31;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 5%;
+    /* height: 3em; */
+    width: 30%;
+    font-size: large;
+    cursor:pointer;
+    /* font-weight: 600; */
+  }
+
+  .btnClick:hover{
+    background-color: #616869;
+
+  }
+
+  /* --------------------------- */
   

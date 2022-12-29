@@ -2,6 +2,7 @@ import React from "react";
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Data from '../storage/Data.js';
+import Game from "./Game.js";
 import { EventHandler } from "react";
 // import styled from "styled-components";
 

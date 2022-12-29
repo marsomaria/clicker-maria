@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useRef, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import Home from "./Home.js";
+import { Link, Router, useNavigate, Route } from 'react-router-dom';
 import Data from '../storage/Data.js';
 import { EventHandler } from "react";
 import ClickGame from "../component/ClickGame.js";
@@ -24,15 +25,25 @@ function Game(){
 
     return(
         // <><NavBar /><ClickGame /></>
+        
         <main>
+            {/* <Router> */}
             <div className="game-header">
                 <div id="logedUser">Hi</div>
-                <div id="logOut">
-                    <Link to="/" onClick={logOutClick}>LogOut</Link>
-                </div>
+                {/* <Route exact path="/"> */}
+                    {/* <Home /> */}
+                    {/* <Link to="/home"></Link> */}
+                    {/* <div id="logOut">
+                        {/* <Link to="/" onClick={logOutClick}>LogOut</Link> }
+                        <a href="/" >LogOut</a>
+                    </div> */}
+                {/* </Route> */}
+                
             </div>
+            {/* </Router> */}
             <div className="homebox">
                 <p>Clicker game</p>
+                <input type="button" value="Click" className="btnClick"></input>
                 
             </div>  
             <div className="latestRanking">
@@ -40,10 +51,11 @@ function Game(){
                 <p>NAME: Points</p>
                 {topranking?.map(({name, autoclickers, megaclickers, points},userid)=>{
                     return(<p className="topRanking">{name}: {points}</p>);
-                    console.log(name);
+                    // console.log(name);
                 })}
             </div>
         </main>
+        
         
     );
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import NavBar from './component/NavBar';
 import Home from './pages/Home';
 import Game from './pages/Game';
 import reportWebVitals from './reportWebVitals';
@@ -11,8 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Router>
-      {/* <Home /> */}
-      <Game />
+      {/* <NavBar/> */}
+      <Home/>
+      {/* <Game /> */}
     </Router>
    
   </React.StrictMode>
