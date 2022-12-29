@@ -3,14 +3,18 @@ const data= {
         localStorage.setItem(i, JSON.stringify(value));
     },
     getData: (i)=>{
+        const LSgitem=localStorage.getItem(i);
+        // console.log(LSgitem);
         if(localStorage.getItem(i)==false){
-            
             console.log('--item null--');
             return null;
         }
         
         try{
-            console.log('--'+JSON.parse(localStorage.getItem(i))+'--');
+            const parse=JSON.parse(localStorage.getItem(i));
+
+            // console.log(JSON.parse(localStorage.getItem(i)));
+            console.log(parse);
             return JSON.parse(localStorage.getItem(i));
         }catch(e){
             console.log('--error--', e.message);
@@ -27,4 +31,6 @@ const data= {
         console.log('--delete all--');
     }
     
-}
+};
+
+export default data;
