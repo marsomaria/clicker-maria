@@ -40,7 +40,7 @@ function Home(){
                 navigate('/game');
             }else{
                 const findUSer=allUsers.filter((us)=> us.name===valuename);
-                console.log(findUSer);
+                // console.log(findUSer);
                 if(findUSer.length===0){
                     Data.setData('allUsers', [...allUsers, logedUser]);
                     navigate('/game');

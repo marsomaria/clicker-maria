@@ -20,7 +20,7 @@ function Game(){
     }
 
     useEffect( () => {
-        
+        console.log(".......s");
     });
 
     return(
