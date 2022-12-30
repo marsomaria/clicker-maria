@@ -33,10 +33,10 @@ function Game(){
                 {/* <Route exact path="/"> */}
                     {/* <Home /> */}
                     {/* <Link to="/home"></Link> */}
-                    {/* <div id="logOut">
-                        {/* <Link to="/" onClick={logOutClick}>LogOut</Link> }
+                    <div id="logOut">
+                        {/* <Link to="/" onClick={logOutClick}>LogOut</Link>*/ }
                         <a href="/" >LogOut</a>
-                    </div> */}
+                    </div>
                 {/* </Route> */}
                 
             </div>

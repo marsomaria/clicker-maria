@@ -30,7 +30,7 @@ function App() {
                   <Route index element={<Home/>} />
 
                   <Route path="/game" element={ <Game />}/>
-
+                  <Route path="*" element={<Home />} />
             </Route>
         </Routes>
     {/* </AnimatePresence> */}
