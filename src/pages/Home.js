@@ -53,6 +53,8 @@ function Home(){
                     navigate('/game');
                 }
 
+                
+
                 // Data.setData('allUsers', [...allUsers, logedUser]);
                 // allUsers.findIndex((us)=> us.includes(logedUser.name) );
                 // navigate('/game');

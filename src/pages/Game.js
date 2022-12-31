@@ -11,21 +11,44 @@ function Game(){
     const getRanking=Data.getData('allUsers');
     const topranking= getRanking?.sort((a, b) => b.points - a.points);
     const [ranking, setRanking ]=useState([]);
+    const navigate = useNavigate();
+
     // setRanking(getRanking);
-    console.log(getRanking);
-    console.log(topranking);
+
+    const allUsers = Data.getData('allUsers');
+    var clicks=0;
+    var userId=0;
+
+    const findUSer= () => allUsers.filter((us)=> {
+        if(us.name===Data.getData('logedUser')){
+            userId=us.id;
+            return us;
+        }
+    });
+    // console.log(getRanking);
+    // console.log(topranking);
+    const user = findUSer();
+
+    const updateAllUsers = () => {
+        user[0].points=clicks;
+        console.log(user);
+        allUsers[userId].points=clicks;
+
+
+    }
 
     const addClick = () => {
-        let clicks=parseInt(localStorage.getItem('userPoints'));
+        clicks=parseInt(Data.getData('userPoints'));
         clicks=clicks+1;
-        localStorage.setItem('userPoints', clicks);
+        Data.setData('userPoints', clicks);
         document.getElementById("totalPoints").innerHTML=clicks;
     }
 
     const logOutClick=() =>{
         console.log('++sesion cerrada++');
-        localStorage.removeItem('logedUser');
-        Navigate('/');
+        Data.deleteData('logedUser');
+        updateAllUsers();
+        navigate('/');
     }
 
     useEffect( () => {
@@ -39,8 +62,8 @@ function Game(){
             {/* <Router> */}
             <div className="game-header">
                 <div id="logedUser">
-                    Hi
-                    <p>{localStorage.getItem('logedUser')}</p>
+                    Hi  
+                    {Data.getData('logedUser')}
                 </div>
                 {/* <Route exact path="/"> */}
                     {/* <Home /> */}
@@ -48,6 +71,8 @@ function Game(){
                     <div id="logOut">
                         {/* <Link to="/" onClick={logOutClick}>LogOut</Link>*/ }
                         <a href="/" >LogOut</a>
+                        <input type="button" value="LogOut" className="btnLogout" onClick={logOutClick}></input>
+
                     </div>
                 {/* </Route> */}
                 
@@ -56,12 +81,12 @@ function Game(){
             <div className="homebox">
                 <h2>Clicker game</h2>
                 <div >TOTAL POINTS: 
-                    <p id="totalPoints">{localStorage.getItem('userPoints')}</p>
+                    <p id="totalPoints">{Data.getData('userPoints')}</p>
                 </div>
                 <div > 
-                    <p id="totalAutoclickers">TOTAL Autoclikers: {localStorage.getItem('userAutoclikers')}</p>
+                    <p id="totalAutoclickers">TOTAL Autoclikers: {Data.getData('userAutoclikers')}</p>
                 </div>
-                <div><p id="totalMegaclickers">TOTAL Megaclikers: {localStorage.getItem('userMegaclickers')}</p></div>
+                <div><p id="totalMegaclickers">TOTAL Megaclikers: {Data.getData('userMegaclickers')}</p></div>
                 <input type="button" value="Click" className="btnClick" onClick={addClick}></input>
                 
             </div>  
