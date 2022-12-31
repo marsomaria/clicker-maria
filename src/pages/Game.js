@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useRef, useState } from 'react';
 import Home from "./Home.js";
-import { Link, Router, useNavigate, Route } from 'react-router-dom';
+import { Link, Router, useNavigate, Route, Navigate } from 'react-router-dom';
 import Data from '../storage/Data.js';
 import { EventHandler } from "react";
 import ClickGame from "../component/ClickGame.js";
@@ -15,8 +15,17 @@ function Game(){
     console.log(getRanking);
     console.log(topranking);
 
+    const addClick = () => {
+        let clicks=parseInt(localStorage.getItem('userPoints'));
+        clicks=clicks+1;
+        localStorage.setItem('userPoints', clicks);
+        document.getElementById("totalPoints").innerHTML=clicks;
+    }
+
     const logOutClick=() =>{
-        console.log('++sesion cerrada++')
+        console.log('++sesion cerrada++');
+        localStorage.removeItem('logedUser');
+        Navigate('/');
     }
 
     useEffect( () => {
@@ -29,7 +38,10 @@ function Game(){
         <main>
             {/* <Router> */}
             <div className="game-header">
-                <div id="logedUser">Hi</div>
+                <div id="logedUser">
+                    Hi
+                    <p>{localStorage.getItem('logedUser')}</p>
+                </div>
                 {/* <Route exact path="/"> */}
                     {/* <Home /> */}
                     {/* <Link to="/home"></Link> */}
@@ -42,15 +54,22 @@ function Game(){
             </div>
             {/* </Router> */}
             <div className="homebox">
-                <p>Clicker game</p>
-                <input type="button" value="Click" className="btnClick"></input>
+                <h2>Clicker game</h2>
+                <div >TOTAL POINTS: 
+                    <p id="totalPoints">{localStorage.getItem('userPoints')}</p>
+                </div>
+                <div > 
+                    <p id="totalAutoclickers">TOTAL Autoclikers: {localStorage.getItem('userAutoclikers')}</p>
+                </div>
+                <div><p id="totalMegaclickers">TOTAL Megaclikers: {localStorage.getItem('userMegaclickers')}</p></div>
+                <input type="button" value="Click" className="btnClick" onClick={addClick}></input>
                 
             </div>  
             <div className="latestRanking">
                 <p><b>TOP Ranking</b></p>
                 <p>NAME: Points</p>
                 {topranking?.map(({name, autoclickers, megaclickers, points},userid)=>{
-                    return(<p className="topRanking">{name}: {points}</p>);
+                    // return(<p className="topRanking">{name}: {points}</p>);
                     // console.log(name);
                 })}
             </div>

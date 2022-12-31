@@ -29,6 +29,9 @@ function Home(){
 
         if(valuename!==''){
             Data.setData('logedUser', logedUser.name);
+            Data.setValue('userPoints', logedUser.points);
+            Data.setData('userAutoclikers', logedUser.autoClickers);
+            Data.setData('userMegaclickers', logedUser.megaClickers);
 
         
 

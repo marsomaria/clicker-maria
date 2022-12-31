@@ -2,6 +2,9 @@ const data= {
     setData: (i,value) => {
         localStorage.setItem(i, JSON.stringify(value));
     },
+    setValue: (i,value) => {
+        localStorage.setItem(i,value);
+    },
     getData: (i)=>{
         const LSgitem=localStorage.getItem(i);
         // console.log(LSgitem);
