@@ -42,7 +42,7 @@ a:hover{
   /* box-shadow: #9595f6 0px 8px 24px, #9595f6 0px 16px 56px, #9595f6 0px 24px 80px; */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-
+/* 
 .dot{
   height: 25px;
   width: 25px;
@@ -51,7 +51,7 @@ a:hover{
   float:left;
   margin-bottom: 5%;
   
-}
+} */
 
 .inputNAME{
     color: #666;
@@ -109,63 +109,122 @@ main{
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
-.game-header{
-  background-color: #666;
+.pointsbox{
+  display:flex;
   flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+/* --------------- */
+.game-header{
+  /* background-color: #666; */
+  display:flex;
+  flex-direction: row;
+  position: fixed;
   width: 100%;
   height: 80px;
-  display:flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 3px solid #666;
   /* color:white; */
 }
   #logedUser {
-    color: white;
-    background-color: #666;
+    color:#666;
     position:right;
+    width: 30%;
     margin-left: 10%;
+    /* height: 10%; */
     padding: auto;
+  }
+  #logedUser>span{
+    /* margin: 15%;
+    margin-top: 15px; */
+    font-weight: bold;
+    margin-left: 2%;
+    position:fixed;
   }
 
   #logOut, #logOut>a{
-    color: white;
-    background-color: #666;
+    /* color: white;
+    background-color: #666; */
+    color:#666;
     position:center;    
     margin-right: 10%;
     padding: auto;
     cursor: pointer;
     text-decoration: none;
-
   }
-
+  
+  svg{
+   
+    font-size: 2em;
+  }
  
+/* --------game-body----------- */
+.game-body{
+  /* display: flex; */
+    /* justify-content: space-between;
+    flex-direction: row; */
+    align-content: center;
+    /* flex-wrap: nowrap;
+    align-items: flex-start; */
+ }
+/* ----------btnCLick----- */
+.btnClick{
+  color: #1cc49d;
+  background-color: #1b2f31;
+  /* border-radius: 30px; */
+  border-radius: 10px;
+  align-items: center;
+  /* margin-left: 30%; */
+  /* margin-right: 30%; */
+  padding: 3%;
+  /* height: 3em; */
+  width: 50%;
+  /* font-size: large; */
+  cursor:pointer;
+  margin: 1%;
+}
 
-  .btnClick{
-    color: #1cc49d;
-    background-color: #1b2f31;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 30%;
-    margin-right: 30%;
-    padding: 5%;
-    /* height: 3em; */
-    width: 30%;
-    font-size: large;
-    cursor:pointer;
-    /* font-weight: 600; */
-  }
+.btnClick:hover{
+  background-color: #4c5858/*616869*/
 
-  .btnClick:hover{
-    background-color: #616869;
+}
+.btnClick:active{
+  background-color: rgb(132, 132, 132) ;
 
-  }
+}
 
 
-  .logout{
+  /* .logout{
     color:white;
+  } */
+  /* ----------btnGame----- */
+
+  .btnAutocliker{
+    background-color: #009879;
+    border-radius: 10px;
+    /* padding: 10px; */
+    padding: 3%;
+    cursor:pointer;
+    /* font-size: large; */
+
   }
+    .btnAutocliker:hover{
+      background-color: #015b49;
+    }
+
+    .btnAutocliker:active{
+      background-color: #03a383;
+    }
+
+    .btnAutocliker:disabled{
+      background-color: #70968e;
+      color:#666;
+    }
+
+
   /* ------------------------------------------------------ */
   /* -------RANKING TABLE---------------------- */
 
@@ -191,6 +250,12 @@ main{
   }
 
     .top-rank-table{
+      background-color: #009879;
+      color: #000;
+      text-align: center;
+    }
+
+    .top-rank-table>tr>th{
       background-color: #009879;
       color: #000;
       text-align: center;
