@@ -15,9 +15,10 @@ function Home(){
 
     const logedUser={
         name:valuename,
+        points:0,
         autoClickers:0,
-        megaClickers:0,
-        points:0
+        megaClickers:0
+        
     };
     const allUsersEmpty = [];
 
@@ -29,9 +30,9 @@ function Home(){
 
         if(valuename!==''){
             Data.setData('logedUser', logedUser.name);
-            Data.setValue('userPoints', logedUser.points);
-            Data.setData('userAutoclikers', logedUser.autoClickers);
-            Data.setData('userMegaclickers', logedUser.megaClickers);
+            // Data.setValue('userPoints', logedUser.points);
+            // Data.setData('userAutoclikers', logedUser.autoClickers);
+            // Data.setData('userMegaclickers', logedUser.megaClickers);
 
         
 
@@ -44,20 +45,16 @@ function Home(){
             }else{
                 const findUSer=allUsers.filter((us)=> us.name===valuename);
                 // console.log(findUSer);
-                if(findUSer.length===0){
+                // if(findUSer.length===0){
+                if(!findUSer.length){
+
                     Data.setData('allUsers', [...allUsers, logedUser]);
                     navigate('/game');
-                }
-                if(findUSer.length===1){
+                }else{
+                // if(findUSer.length===1){
                     console.log('+++ya existe++');
                     navigate('/game');
                 }
-
-                
-
-                // Data.setData('allUsers', [...allUsers, logedUser]);
-                // allUsers.findIndex((us)=> us.includes(logedUser.name) );
-                // navigate('/game');
             }
         }
     };
@@ -74,12 +71,8 @@ function Home(){
         }
     }
 
-
-
     return(
-        <div className="homebox">
-            {/* <span class="dot"></span>
-            <span class="dot"></span> */}
+        <div className="box">
             <p>Clicker game</p>
             <p>sign in with a name</p>
             <form onSubmit={SubmitHandler}>

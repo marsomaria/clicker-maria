@@ -3,7 +3,7 @@ const data= {
         localStorage.setItem(i, JSON.stringify(value));
     },
     setValue: (i,value) => {
-        localStorage.setItem(i,value);
+        localStorage.setItem(i,JSON.stringify(value));
     },
     // getValue: (i) => {
     //     localStorage.getItem(i);

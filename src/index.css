@@ -93,7 +93,7 @@ main{
 
 }
 
-.homebox{
+.box{
   /* background-color: green; */
   background-color:white;
   max-width: 500px;
@@ -138,15 +138,7 @@ main{
 
   }
 
-  .latestRanking{
-    margin-top: 0px;
-    position: relative;
-    text-align: center;
-  }
-  .topRanking{
-    /* padding: 1px; */
-    text-align:center;
-  }
+ 
 
   .btnClick{
     color: #1cc49d;
@@ -170,5 +162,60 @@ main{
 
   }
 
-  /* --------------------------- */
+
+  .logout{
+    color:white;
+  }
+  /* ------------------------------------------------------ */
+  /* -------RANKING TABLE---------------------- */
+
+  .latestRanking{
+    margin-top: 0px;
+    position: relative;
+    text-align: center;
+  }
+  .topRanking{
+    /* padding: 1px; */
+    text-align:center;
+  }
+  .rank-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+
+    .top-rank-table{
+      background-color: #009879;
+      color: #000;
+      text-align: center;
+    }
+
+    .rank-table th,
+    .rank-table td {
+        padding: 12px 15px;
+    }
+
+    .rank-table tbody tr {
+      border-bottom: 1px solid #dddddd;
+    }
+    
+    .rank-table tbody tr:nth-of-type(even) {
+        background-color: #f3f3f3;
+    }
+    
+    .rank-table tbody tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+
+    .rank-table tbody tr.user-active-row {
+      font-weight: bold;
+      color: #009879;
+  }
+  /* ------------------------------------------------------ */
+  /* ------------------------------------------------------ */
+  /* ------------------------------------------------------ */
+  /* ------------------------------------------------------ */
   
