@@ -55,12 +55,14 @@ a:hover{
 
 .inputNAME{
     color: #666;
+    /* display: block; */
+    /* width: 70%; */
     background: #e6e6e6;
+    /* cursor:text; */
     height: 30%;
     border:white;
     border-radius: 25px;
-    /* padding: 10px 30px 10px 68px; */
-    padding: 3%;
+    padding: 10px 30px 10px 68px;
 }
 .inputNAME:hover{
   background: #bab8b8;
@@ -70,8 +72,7 @@ a:hover{
 .btnJOIN{
   margin: 5%;
   border-radius:25px;
-  width: 25%;
-  padding: 3%;
+  padding: 5%;
   border:none;
   background-color: cadetblue;
   cursor:pointer;
@@ -83,19 +84,18 @@ a:hover{
     background-color: aqua;
   }
 
-#errorName{
-  color:red;
-}
+
 /* ---------------GAME--------------------- */
 main{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
 
 }
 
 .box{
   /* background-color: green; */
+  
   background-color:white;
   max-width: 500px;
   min-width: 300px;
@@ -109,7 +109,6 @@ main{
   color:black;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-
 .pointsbox{
   display:flex;
   flex-direction: row;
@@ -161,73 +160,57 @@ main{
    
     font-size: 2em;
   }
- 
+
 /* --------game-body----------- */
-.game-body{
-  /* display: flex; */
-    /* justify-content: space-between;
-    flex-direction: row; */
+ .game-body{
+  display: flex;
+    justify-content: space-between;
+    flex-direction: row;
     align-content: center;
-    /* flex-wrap: nowrap;
-    align-items: flex-start; */
+    flex-wrap: nowrap;
+    align-items: flex-start;
  }
 /* ----------btnCLick----- */
-.btnClick{
-  color: #1cc49d;
-  background-color: #1b2f31;
-  /* border-radius: 30px; */
-  border-radius: 10px;
-  border-radius: 25px;
+  .btnClick{
+    color: #1cc49d;
+    background-color: #1b2f31;
+    /* border-radius: 30px; */
+    border-radius: 10px;
 
-  align-items: center;
-  /* margin-left: 30%; */
-  /* margin-right: 30%; */
-  padding: 3%;
-  /* height: 3em; */
-  width: 50%;
-  /* font-size: large; */
-  cursor:pointer;
-  margin: 1%;
-}
+    align-items: center;
+    /* margin-left: 30%; */
+    /* margin-right: 30%; */
+    padding: 3%;
+    /* height: 3em; */
+    width: 50%;
+    font-size: large;
+    cursor:pointer;
+    margin: 1%;
+  }
 
-.btnClick:hover{
-  background-color: #4c5858/*616869*/
+  .btnClick:hover{
+    background-color: #616869;
 
-}
-.btnClick:active{
-  background-color: rgb(132, 132, 132) ;
-
-}
+  }
 
 
   /* .logout{
     color:white;
   } */
-  /* ----------btnGame----- */
+/* ----------btnGame----- */
 
   .btnAutocliker{
     background-color: #009879;
     border-radius: 10px;
-    border-radius: 25px;
-
-    /* padding: 10px; */
-    padding: 3%;
+    padding: 10px;
+    font-size: large;
     cursor:pointer;
-    /* font-size: large; */
 
   }
     .btnAutocliker:hover{
       background-color: #015b49;
     }
 
-    .btnAutocliker:active{
-      background-color: #03a383;
-    }
-
-    .btnAutocliker:disabled{
-      background-color: #70968e;
-      color:#666;
-    }
 
 
   /* ------------------------------------------------------ */
@@ -236,9 +219,8 @@ main{
   .latestRanking{
     display: flex;
     flex-direction: row;
-    margin-top: 0px;
-    
-    /* position: relative; */
+    margin-top: 100px;
+    margin-left: 100px;
     text-align: center;
   }
   .topRanking{
@@ -246,13 +228,8 @@ main{
     text-align:center;
   }
   .rank-table{
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 25px;
     border-collapse: collapse;
-    margin: 25px 0;
-    margin-left:20px;
+    /* margin: 100px 0; */
     font-size: 0.9em;
     font-family: sans-serif;
     min-width: 400px;
@@ -266,34 +243,16 @@ main{
     }
 
     .top-rank-table>tr>th{
-      /* border-top-right-radius: 25px;
-      border-top-left-radius: 25px; */
-      background-color: #009879;
-      color: #000;
-      text-align: center;
-    }
-    .top-rank-table>tr>th:last-of-type{
-      border-top-right-radius: 25px;
       background-color: #009879;
       color: #000;
       text-align: center;
     }
 
-    .top-rank-table>tr>th:first-of-type{
-      border-top-left-radius: 25px;
-      background-color: #009879;
-      color: #000;
-      text-align: center;
-    }
     .rank-table th,
     .rank-table td {
         padding: 12px 15px;
     }
 
-    .rank-table tbody{
-      border-bottom-right-radius: 25px;
-      border-bottom-left-radius: 25px;
-    }
     .rank-table tbody tr {
       border-bottom: 1px solid #dddddd;
     }
@@ -304,26 +263,11 @@ main{
     
     .rank-table tbody tr:last-of-type {
         border-bottom: 2px solid #009879;
-        border-bottom-right-radius: 25px;
-        border-bottom-left-radius: 25px;
-
     }
 
-    .rank-table tbody tr.user-active-row {
+    .rank-table tbody tr.active-user-row {
       font-weight: bold;
       color: #009879;
-  }
-  .user-row:last-of-type{
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-  }
-  .user-row td:last-of-type{
-    border-bottom-right-radius: 25px;
-  }
-
-  .user-row td:first-of-type{
-    border-bottom-left-radius: 25px;
-
   }
   /* ------------------------------------------------------ */
   /* ------------------------------------------------------ */

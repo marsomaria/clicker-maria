@@ -182,7 +182,7 @@ function Game(){
                             <p id="totalPoints">{uPoints}</p>
                             <p id="totalPointsUnits">{showNumberUnits(uPoints)}</p>
                         </div>
-                        <div > TOTAL Autoclikers:
+                        <div > TOTAL AUTCLIKERS:
                             <p id="totalAutoclickers">
                                 {autoclik}
                             </p>
@@ -195,13 +195,13 @@ function Game(){
                 </div>  
 
                 <div className="latestRanking">
-                    <table className="rank-table" rowsPerPage={5}>
+                    <table className="rank-table" >
                         <thead id="rank-header" className="top-rank-table">
                             <tr >
-                                <th>Rank</th>
-                                <th>NaME</th>
+                                <th>RANK</th>
+                                <th>NAME</th>
                                 <th>POINTS</th>
-                                <th>autoclickers</th>
+                                <th>AUTOCLICKERS</th>
                             </tr>
                         </thead>
 
