@@ -170,8 +170,11 @@ main{
   /* -------RANKING TABLE---------------------- */
 
   .latestRanking{
+    display: flex;
+    flex-direction: row;
     margin-top: 0px;
-    position: relative;
+    
+    /* position: relative; */
     text-align: center;
   }
   .topRanking{

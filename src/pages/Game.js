@@ -90,8 +90,8 @@ function Game(){
                 
             </div>  
             <div className="latestRanking">
-                <p><b>TOP Ranking</b></p>
-                <p>NAME: Points</p>
+                {/* <p><b>TOP Ranking</b></p>
+                <p>NAME: Points</p> */}
 
                 <table className="rank-table">
                     <thead className="top-rank-table">
