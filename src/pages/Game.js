@@ -9,17 +9,9 @@ import NavBar from "../component/NavBar.js";
 
 function Game(){
     const getRanking=Data.getData('allUsers');
-    const topranking= getRanking?.sort((a, b) => b.points - a.points);
-    const [ranking, setRanking ]=useState([]);
-    const navigate = useNavigate();
-
-    // setRanking(getRanking);
-
-    const allUsers = Data.getData('allUsers');
-    var clicks=0;
-    var userId=0;
-
-    const findUSer= () => allUsers.filter((us)=> {
+    const usersAll=Data.getData('allUsers');
+    const dlogedUser=Data.getData('logedUser');
+    const findUSer= () => usersAll.filter((us)=> {
         if(us.name===Data.getData('logedUser')){
             userId=us.id;
             return us;
@@ -28,26 +20,49 @@ function Game(){
     // console.log(getRanking);
     // console.log(topranking);
     const user = findUSer();
+    const topranking= getRanking?.sort((a, b) => b.points - a.points);
+    const [ranking, setRanking ]=useState([]);
+    const [uPoints, setPoints ]=useState(user?.points);
+    const navigate = useNavigate();
 
-    const updateAllUsers = () => {
-        user[0].points=clicks;
-        console.log(user);
-        allUsers[userId].points=clicks;
+    // setRanking(getRanking);
+
+    const allUsers = Data.getData('allUsers');
+    var clicks=0;
+    var userId=0;
+
+    
+
+    // const updateAllUsers = () => {
+    //     user[0].points=clicks;
+    //     console.log(user);
+    //     allUsers[userId].points=clicks;
 
 
-    }
+    // }
+
+    const updateAllUsers = usersAll?.map((usUpdate) => {
+		if (usUpdate.name === dlogedUser) {
+			return { ...usUpdate, autoClickers: 0, points: uPoints };
+		}
+		return usUpdate;
+	});
+
+	Data.setData('allUsers', updateAllUsers);
 
     const addClick = () => {
         clicks=parseInt(Data.getData('userPoints'));
         clicks=clicks+1;
         Data.setData('userPoints', clicks);
+        setPoints(clicks);
+        user.points=uPoints;
         document.getElementById("totalPoints").innerHTML=clicks;
     }
 
     const logOutClick=() =>{
         console.log('++sesion cerrada++');
         Data.deleteData('logedUser');
-        updateAllUsers();
+        // updateAllUsers();
         navigate('/');
     }
 
