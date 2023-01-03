@@ -311,12 +311,12 @@ main{
       background-color: #a9d3ca;
     }
 
-    .active-user-row tr:last-of-type {
+    .active-user-row td:last-of-type {
       border-bottom-right-radius: 25px;
       border-bottom-left-radius: 25px;
   
   }
-  .active-user-row tr:first-of-type {
+  .active-user-row td:first-of-type {
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
 
