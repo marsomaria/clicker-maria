@@ -57,12 +57,12 @@ function Home(){
 
     return(
         <div className="box">
-            <h2>Clicker game</h2>
-            <p>sign in with a name</p>
+            <h2 data-testid="clicker-game-h2">Clicker game</h2>
+            <p data-testid="sign-name">sign in with a name</p>
             <p id="errorName"></p>
             <form onSubmit={SubmitHandler}>
-                <input type="text" id="inputName" name="name" placeholder="name" onChange={checkName} className='inputNAME'></input>
-                <input type="submit" value="START" className='btnJOIN'></input>
+                <input data-testid="input-name" type="text" id="inputName" name="name" placeholder="name" onChange={checkName} className='inputNAME'></input>
+                <input data-test-id="join-button" type="submit" value="START" className='btnJOIN'></input>
             </form>
         </div>
     );
