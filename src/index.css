@@ -202,7 +202,7 @@ main{
     width: 100%;
     padding: 3%;
     padding-top: 5%;
-  padding-bottom: 5%;
+    padding-bottom: 5%;
 
     font-size: large;
     cursor:pointer;
@@ -316,11 +316,9 @@ main{
 
     .active-user-row td:last-of-type {
       border-bottom-right-radius: 25px;
-      border-bottom-left-radius: 25px;
   
   }
   .active-user-row td:first-of-type {
-    border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;
 
 }
