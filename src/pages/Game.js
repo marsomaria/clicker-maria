@@ -5,6 +5,7 @@ import Data from '../storage/Data.js';
 import { Link } from "react-router-dom";
 import {FaUserCircle} from "react-icons/fa";
 import {AiOutlineLogout} from "react-icons/ai";
+import BasicTable from "../component/BasicTable.js";
 
 function Game(){
     var clicks=0;
@@ -26,30 +27,7 @@ function Game(){
     const topranking= usersAll?.sort((a, b) => b.points - a.points);
     const [ranking, setRanking ]=useState([topranking]);
 
-    // const [currentPage, setCurrentPage] = useState(1);
-    // const [recordsPerPage] = useState(10);
-    // const indexOfLastRecord = currentPage * recordsPerPage;
-    // const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-    // const currentRecords = usersAll.slice(indexOfFirstRecord, 
-    //     indexOfLastRecord);
-    //     console.log(currentRecords);
-    //     const nPages = Math.ceil(usersAll.length / recordsPerPage);
-    //     const pageNumbers = [...Array(nPages + 1).keys()].slice(1)
-
-
-    //     const nextPage = () => {
-    //         if(currentPage !== nPages) 
-    //             setCurrentPage(currentPage + 1)
-    //     }
-    //     const prevPage = () => {
-    //         if(currentPage !== 1) 
-    //             setCurrentPage(currentPage - 1)
-    //     }
-
-
-
-
-    var userpoints=user.points;    
+    // var userpoints=user.points;    
     const navigate = useNavigate();
     var userId=1;
 
@@ -232,6 +210,8 @@ function Game(){
                         })}
                     </tbody>
                 </table>
+
+                {/* <BasicTable></BasicTable> */}
             </section>
         </main>
         

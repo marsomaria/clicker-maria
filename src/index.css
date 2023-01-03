@@ -344,9 +344,10 @@ main{
     
     }
 
-    .rank-table tbody tr.user-active-row {
+    .user-active-row {
       font-weight: bold;
-      color: #009879;
+      color: #009879 !important;
+      background-color: #015b49;
   }
   .user-row:last-of-type{
     border-bottom-right-radius: 25px;
