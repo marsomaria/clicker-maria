@@ -177,6 +177,7 @@ main{
   align-items: center;
   padding: 3%;
   padding-top: 5%;
+  padding-bottom: 5%;
   font-size: large;
   width: 100%;
   cursor:pointer;
@@ -201,6 +202,8 @@ main{
     width: 100%;
     padding: 3%;
     padding-top: 5%;
+  padding-bottom: 5%;
+
     font-size: large;
     cursor:pointer;
   }
