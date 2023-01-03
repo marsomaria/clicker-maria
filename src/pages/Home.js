@@ -21,7 +21,7 @@ function Home(){
         const formData = new FormData(event.target);
         console.log(formData);
 
-        if(valuename!==''){
+        if(valuename!=='' && !theName){
             Data.setData('logedUser', logedUser.name);
             const allUsers = Data.getData('allUsers');
             
@@ -62,7 +62,7 @@ function Home(){
             <p id="errorName"></p>
             <form onSubmit={SubmitHandler}>
                 <input data-testid="input-name" type="text" id="inputName" name="name" placeholder="name" onChange={checkName} className='inputNAME'></input>
-                <input data-test-id="join-button" type="submit" value="START" className='btnJOIN'></input>
+                <input data-testid="join-button" type="submit" value="START" className='btnJOIN'></input>
             </form>
         </div>
     );

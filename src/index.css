@@ -344,11 +344,13 @@ main{
     
     }
 
-    .user-active-row {
+    .active-user-row td {
       font-weight: bold;
       color: #009879 !important;
-      background-color: #015b49;
-  }
+      
+      background-color: #a9d3ca;
+    }
+
   .user-row:last-of-type{
     border-bottom-right-radius: 25px;
     border-bottom-left-radius: 25px;

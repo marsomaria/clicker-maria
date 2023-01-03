@@ -2,25 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import NavBar from './component/NavBar';
-import Home from './pages/Home';
-import Game from './pages/Game';
-// import Pages from './pages/Pages';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter, BrowserRouter as Router, Routes} from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // <React.StrictMode>
-  //   <Router>
-  //     {/* <NavBar/> */}
-  //     <Home/>
-  //     {/* <Game /> */}
-  //   </Router>
-
-   
-  // </React.StrictMode>
-  // <Pages />
 
   <App />
 );

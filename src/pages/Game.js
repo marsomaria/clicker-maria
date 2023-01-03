@@ -5,15 +5,18 @@ import Data from '../storage/Data.js';
 import { Link } from "react-router-dom";
 import {FaUserCircle} from "react-icons/fa";
 import {AiOutlineLogout} from "react-icons/ai";
-import BasicTable from "../component/BasicTable.js";
 
 function Game(){
     var clicks=0;
     var numAutoClickers=1;
     const autoClickerBaseCost=5;
+    var userId=1;
+    const dlogedUser=Data.getData('logedUser');
     
     const usersAll=Data.getData('allUsers');
-    const dlogedUser=Data.getData('logedUser');
+    if(usersAll===null){
+        usersAll=JSON.stringify({'name':dlogedUser, 'points':0, 'autoclickers':0});
+    }
     const findUSer= () => usersAll.filter((us)=> {
         if(us.name===Data.getData('logedUser')){
             userId=us.id;
@@ -24,13 +27,9 @@ function Game(){
     });
     const user = findUSer();
     const [uPoints, setuPoints ]=useState(clicks);
-    const topranking= usersAll?.sort((a, b) => b.points - a.points);
-    const [ranking, setRanking ]=useState([topranking]);
-
-    // var userpoints=user.points;    
+    const topranking= usersAll?.sort((a, b) => b.points - a.points);  
     const navigate = useNavigate();
-    var userId=1;
-
+    
     // 1 autoclicker = 1p/100ms
     var autoClickerCost = autoClickerBaseCost + autoClickerBaseCost * numAutoClickers;
     const [canBuy, setCanBuy ]=useState(false);
@@ -106,10 +105,6 @@ function Game(){
         return numberUnits;
     }
 
-    // const handlePageRanking = (actualPage) =>{
-    //     setCurrentPage(actualPage.selected + 1); // update the current page in state
-    // }
-
     const logOutClick=() =>{
         console.log('++sesion cerrada++');
         Data.setData('logedUser', "-");
@@ -137,49 +132,46 @@ function Game(){
 
     return(
         <main>
-            <section className="game-header">
+            <section className="game-header" id={user.name}>
                 <div id="logedUser">
                    <FaUserCircle ></FaUserCircle>
-                    <span>{ dlogedUser }</span>
+                    <span data-testid="game-logeduser" id={userId}>{ dlogedUser }</span>
                 </div>
                     <div id="logOut">
-                    {/* <RiLogoutCircleRLine></RiLogoutCircleRLine> */}
                     <AiOutlineLogout></AiOutlineLogout>
-                        <Link to="/" className="logout" onClick={logOutClick}>LogOut</Link>
+                        <Link to="/" className="logout" onClick={logOutClick} data-testid="game-logout">LogOut</Link>
                     </div>
                 
             </section>
             <section className="game-body">
                 <div className="homebox">
-                    <h2>Clicker game</h2>
+                    <h2 data-testid="game-clickergame">Clicker game</h2>
                     <div className="pointsbox">
                         <div >
-                            <h4>POINTS </h4>
-                            <p id="totalPoints">{uPoints}</p>
-                            <p id="totalPointsUnits">{showNumberUnits(uPoints)}</p>
+                            <h4 data-testid="game-points-title">POINTS </h4>
+                            <p id="totalPoints" data-testid="game-points">{uPoints}</p>
+                            <p id="totalPointsUnits" data-testid="game-points-units">{showNumberUnits(uPoints)}</p>
                         </div>
                         <div > 
-                        <h4>AUTOCLICKERS </h4>
-
-                            {/* TOTAL AUTCLIKERS: */}
-                            <p id="totalAutoclickers">
+                        <h4 data-testid="game-autoclickers-title">AUTOCLICKERS </h4>
+                            <p id="totalAutoclickers" data-testid="game-autoclickers">
                                 {autoclik}
                             </p>
-                            <p id="totalAutoclickUnits">{showNumberUnits(autoclik)}</p>
-
+                            <p id="totalAutoclickUnits" data-testid="game-autoclickers-units">{showNumberUnits(autoclik)}</p>
+ 
                         </div>
                     </div>
-                    <input type="button" value="Click" className="btnClick" onClick={addClick}></input>
-                    <input type="button" id="buyAutocliker" value={btnclickerText} className="btnAutocliker" onClick={addAutoClick}></input>
+                    <input type="button" value="Click" className="btnClick" onClick={addClick} data-testid="game-btnclick"></input>
+                    <input type="button" id="buyAutocliker" value={btnclickerText} className="btnAutocliker" onClick={addAutoClick} data-testid="game-btnautoclicker"></input>
                 </div>  
 
                 <table className="rank-table" >
                     <thead id="rank-header" className="top-rank-table">
                         <tr >
-                            <th>RANK</th>
-                            <th>NAME</th>
-                            <th>POINTS</th>
-                            <th>AUTOCLICKERS</th>
+                            <th data-testid="game-rank-id">RANK</th>
+                            <th data-testid="game-rank-name">NAME</th>
+                            <th data-testid="game-rank-points">POINTS</th>
+                            <th data-testid="game-rank-autoclikers">AUTOCLICKERS</th>
                         </tr>
                     </thead>
 
@@ -203,7 +195,6 @@ function Game(){
                                         <td >{points}</td>
                                         <td >{autoClickers}</td>
                                     </tr>
-                                    // <p className="topRanking">{name}: {points}</p>
                                 );
                             }
                             
@@ -211,7 +202,6 @@ function Game(){
                     </tbody>
                 </table>
 
-                {/* <BasicTable></BasicTable> */}
             </section>
         </main>
         
