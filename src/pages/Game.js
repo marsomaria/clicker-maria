@@ -106,7 +106,6 @@ function Game(){
     }
 
     const logOutClick=() =>{
-        console.log('++sesion cerrada++');
         Data.setData('logedUser', "-");
         Data.deleteData('userPoints');
         Data.deleteData('userAutoclikers');

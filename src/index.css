@@ -23,7 +23,6 @@ a:hover{
   color:green;
 }
 .homebox{
-  /* background-color: green; */
   background-color:white;
   max-width: 500px;
   min-width: 300px;
@@ -35,20 +34,8 @@ a:hover{
   border-radius: 25px;
   padding:5%;
   color:black;
-  /* box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; */
-  /* box-shadow: #9595f6 0px 8px 24px, #9595f6 0px 16px 56px, #9595f6 0px 24px 80px; */
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
-/* 
-.dot{
-  height: 25px;
-  width: 25px;
-  background-color: #bbb;
-  border-radius: 50%;
-  float:left;
-  margin-bottom: 5%;
-  
-} */
 
 .inputNAME{
     color: #666;
@@ -56,7 +43,6 @@ a:hover{
     height: 30%;
     border:white;
     border-radius: 25px;
-    /* padding: 10px 30px 10px 68px; */
     padding: 3%;
 }
 .inputNAME:hover{
@@ -103,17 +89,12 @@ main{
   border-radius: 25px;
   padding:3%;
   color:black;
-  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px; */
   box-shadow: #666 0px 5px 15px 0px;
 
 }
 
 .pointsbox{
-  /* display:flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: flex-start;
-   */display: flex;
+    display: flex;
     flex-direction: row;
     align-items: center;
     align-content: space-between;
@@ -128,7 +109,6 @@ main{
 
 /* --------------- */
 .game-header{
-  /* background-color: #666; */
   display:flex;
   flex-direction: row;
   position: fixed;
@@ -137,7 +117,6 @@ main{
   align-items: center;
   justify-content: space-between;
   border-bottom: 3px solid #666;
-  /* color:white; */
 }
   #logedUser {
     color:#666;
@@ -170,7 +149,6 @@ main{
     
     margin-right: 2%;
     margin-bottom: 5%;
-    /* padding: auto; */
     cursor: pointer;
     text-decoration: none;
     font-weight: bold;
@@ -189,7 +167,6 @@ main{
 /* ----------btnCLick----- */
 #totalPoints, #totalAutoclickers{
   width: 100%;
-  /* margin:1%; */
   align-items: center;
 }
 .btnClick{
@@ -199,6 +176,8 @@ main{
   border-radius: 25px;
   align-items: center;
   padding: 3%;
+  padding-top: 5%;
+  font-size: large;
   width: 100%;
   cursor:pointer;
   margin: 1%;
@@ -221,6 +200,8 @@ main{
     border-radius: 25px;
     width: 100%;
     padding: 3%;
+    padding-top: 5%;
+    font-size: large;
     cursor:pointer;
   }
     .btnAutocliker:hover{
@@ -245,7 +226,6 @@ main{
     flex-direction: row;
     margin-top: 0px;
     margin:100px auto;
-    /* position: relative; */
     text-align: center;
     max-width: 500px;
     min-width: 300px;
@@ -257,37 +237,20 @@ main{
     box-shadow: rgb(0 0 0 / 15%) 0px 5px 15px 0px;
   }
   .topRanking{
-    /* padding: 1px; */
     text-align:center;
   }
   .rank-table{
-  /* box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-
-    border-top-right-radius: 25px;
-    border-top-left-radius: 25px;
-    border-bottom-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    border-collapse: collapse;
-    margin: 25px 0;
-    margin-left:20px;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15); */
     background-color:white;
     max-width: 500px;
     min-width: 300px;
-    /* max-height: 700px; */
     width: 30%;
     height: 60%;
     text-align: center;
     margin: 100px auto;
     border-radius: 25px;
-    /* padding:5%; */
     color:black;
     box-shadow: #666 0px 5px 15px 0px;
     border-bottom: 2px solid #009879;
-    /* border:2px solid #009879; */
   }
 
     .top-rank-table{
@@ -297,8 +260,6 @@ main{
     }
 
     .top-rank-table>tr>th{
-      /* border-top-right-radius: 25px;
-      border-top-left-radius: 25px; */
       background-color: #009879;
       color: #000;
       text-align: center;
@@ -338,7 +299,6 @@ main{
     }
     
     .rank-table tbody tr:last-of-type {
-        /* border-bottom: 2px solid #009879; */
         border-bottom-right-radius: 25px;
         border-bottom-left-radius: 25px;
     
@@ -350,6 +310,17 @@ main{
       
       background-color: #a9d3ca;
     }
+
+    .active-user-row tr:last-of-type {
+      border-bottom-right-radius: 25px;
+      border-bottom-left-radius: 25px;
+  
+  }
+  .active-user-row tr:first-of-type {
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+
+}
 
   .user-row:last-of-type{
     border-bottom-right-radius: 25px;

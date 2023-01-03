@@ -7,7 +7,6 @@ function Home(){
     const navigate = useNavigate();
     const [valuename, setValueName] = useState('');
     const [theName, setTheName] = useState(false);
-    // const [start, setStart]=useState(false);
 
     const logedUser={
         name:valuename,
@@ -18,7 +17,6 @@ function Home(){
 
     const SubmitHandler =  async (event) => {
         event.preventDefault();
-        // const formData = new FormData(event.target);
 
         if(valuename!=='' && !theName){
             Data.setData('logedUser', logedUser.name);

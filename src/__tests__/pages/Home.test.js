@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Home from '../../pages/Home';
 
-// describe('<Home />', () => {
 	test('this is going to render Home', () => {
 		render(
 			<BrowserRouter>
@@ -25,4 +24,3 @@ import Home from '../../pages/Home';
         expect(screen.getByRole('button')).toBeTruthy();
         expect(screen.getByText(/START/i)).toBeTruthy();
 	});
-// });
