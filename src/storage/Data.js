@@ -20,7 +20,6 @@ const data= {
     },
     deleteData:(i) => {
         localStorage.removeItem(i);
-        console.log('--item removed--');
 
     },
     deleteAll:()=>{

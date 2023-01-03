@@ -18,8 +18,7 @@ function Home(){
 
     const SubmitHandler =  async (event) => {
         event.preventDefault();
-        const formData = new FormData(event.target);
-        console.log(formData);
+        // const formData = new FormData(event.target);
 
         if(valuename!=='' && !theName){
             Data.setData('logedUser', logedUser.name);
@@ -47,7 +46,6 @@ function Home(){
     const checkName = (inputtext) => {
         setValueName(inputtext.target.value);
         let text=inputtext.target.value;
-        console.log(text);
         if(text===''){
             setTheName(true);
         }else{
