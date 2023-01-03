@@ -4,10 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Data from '../storage/Data.js';
 import { Link } from "react-router-dom";
 import {FaUserCircle} from "react-icons/fa";
-import Pagination from 'react-paginate';
-import RiLogoutCircleRLine from "react-icons/ri";
-import AiOutlineLogout from "react-icons/ai";
-import IoMdLogOut from "react-icons/io";
+import {AiOutlineLogout} from "react-icons/ai";
 
 function Game(){
     var clicks=0;
@@ -110,6 +107,9 @@ function Game(){
     const showNumberUnits = (numberPoints) => {
         const stringNumber = numberPoints.toString();
         var numberUnits;
+        
+        if(stringNumber.length<3)
+            numberUnits='0 k';
         if(stringNumber.length>3)
             numberUnits=stringNumber.slice(0,1) + 'k';
         if(stringNumber.length>4)
@@ -162,13 +162,11 @@ function Game(){
             <section className="game-header">
                 <div id="logedUser">
                    <FaUserCircle ></FaUserCircle>
-                   {/* <IoMdLogOut></IoMdLogOut> */}
-                    {/* {Data.getData('logedUser')} */}
                     <span>{ dlogedUser }</span>
                 </div>
                     <div id="logOut">
                     {/* <RiLogoutCircleRLine></RiLogoutCircleRLine> */}
-                    {/* <AiOutlineLogout></AiOutlineLogout> */}
+                    <AiOutlineLogout></AiOutlineLogout>
                         <Link to="/" className="logout" onClick={logOutClick}>LogOut</Link>
                     </div>
                 
@@ -178,11 +176,14 @@ function Game(){
                     <h2>Clicker game</h2>
                     <div className="pointsbox">
                         <div >
-                            TOTAL POINTS: 
+                            <h4>POINTS </h4>
                             <p id="totalPoints">{uPoints}</p>
                             <p id="totalPointsUnits">{showNumberUnits(uPoints)}</p>
                         </div>
-                        <div > TOTAL AUTCLIKERS:
+                        <div > 
+                        <h4>AUTOCLICKERS </h4>
+
+                            {/* TOTAL AUTCLIKERS: */}
                             <p id="totalAutoclickers">
                                 {autoclik}
                             </p>
@@ -194,50 +195,43 @@ function Game(){
                     <input type="button" id="buyAutocliker" value={btnclickerText} className="btnAutocliker" onClick={addAutoClick}></input>
                 </div>  
 
-                <div className="latestRanking">
-                    <table className="rank-table" >
-                        <thead id="rank-header" className="top-rank-table">
-                            <tr >
-                                <th>RANK</th>
-                                <th>NAME</th>
-                                <th>POINTS</th>
-                                <th>AUTOCLICKERS</th>
-                            </tr>
-                        </thead>
+                <table className="rank-table" >
+                    <thead id="rank-header" className="top-rank-table">
+                        <tr >
+                            <th>RANK</th>
+                            <th>NAME</th>
+                            <th>POINTS</th>
+                            <th>AUTOCLICKERS</th>
+                        </tr>
+                    </thead>
 
-                        <tbody id="rank-body">
+                    <tbody id="rank-body">
 
-                            {topranking?.map(({name, autoClickers, megaClickers, points},userid)=>{
-                                if(name===dlogedUser){
-                                    return(
-                                        <tr className="active-user-row" key={userid+1}>
-                                            <td >{userid+1}</td>
-                                            <td >{name}</td>
-                                            <td >{points}</td>
-                                            <td >{autoClickers}</td>
-                                        </tr>
-                                    );
-                                }else{
-                                    return(
-                                        <tr className="user-row" key={userid+1}>
-                                            <td >{userid+1}</td>
-                                            <td >{name}</td>
-                                            <td >{points}</td>
-                                            <td >{autoClickers}</td>
-                                        </tr>
-                                        // <p className="topRanking">{name}: {points}</p>
-                                    );
-                                }
-                                
-                            })}
-                        </tbody>
-                    </table>
-                    {/* <Pagination
-        nPages = { nPages }
-        currentPage = { currentPage } 
-        setCurrentPage = { setCurrentPage }
-    /> */}
-                </div>
+                        {topranking?.map(({name, autoClickers, megaClickers, points},userid)=>{
+                            if(name===dlogedUser){
+                                return(
+                                    <tr className="active-user-row" key={userid+1}>
+                                        <td >{userid+1}</td>
+                                        <td >{name}</td>
+                                        <td >{points}</td>
+                                        <td >{autoClickers}</td>
+                                    </tr>
+                                );
+                            }else{
+                                return(
+                                    <tr className="user-row" key={userid+1}>
+                                        <td >{userid+1}</td>
+                                        <td >{name}</td>
+                                        <td >{points}</td>
+                                        <td >{autoClickers}</td>
+                                    </tr>
+                                    // <p className="topRanking">{name}: {points}</p>
+                                );
+                            }
+                            
+                        })}
+                    </tbody>
+                </table>
             </section>
         </main>
         

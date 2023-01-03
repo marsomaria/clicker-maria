@@ -1,21 +1,21 @@
-import React from "react";
+// import React from "react";
 
-function ClickGame() {
+// function ClickGame() {
   
-        return(
+//         return(
             
-        <div className="homebox">
-            {/* <span class="dot"></span>
-            <span class="dot"></span> */}
-            <p>Clicker game</p>
+//         <div className="homebox">
+//             {/* <span class="dot"></span>
+//             <span class="dot"></span> */}
+//             <p>Clicker game</p>
             
-        </div>
+//         </div>
 
-        )
+//         )
     
-}
+// }
 
-export default ClickGame;
+// export default ClickGame;
 
 
-// https://www.youtube.com/watch?v=fL8cFqhTHwA&ab_channel=BrianDesign
+// // https://www.youtube.com/watch?v=fL8cFqhTHwA&ab_channel=BrianDesign
